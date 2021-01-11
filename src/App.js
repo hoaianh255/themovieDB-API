@@ -1,24 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from 'react';
+import {Films, Navbar} from './components';
+import Home from './screen/Home';
+import SingleFilmPage from './screen/SingleFilmPage';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import ContentPolicy from "./screen/ContentPolicy";
+import PrivatePolicy from "./screen/PrivatePolicy";
+import About from "./screen/About";
+import Search from "./screen/Search";
+function App(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Router>
+      <div className="bg-gray-800">
+        <header>
+          <Navbar/>
+        </header>
+        <Switch>
+          <Route exact path="/">
+            <Home/>
+          </Route>
+          <Route exact path="/film/:id">
+            <SingleFilmPage/>
+          </Route>
+          <Route exact path="/contentPolicy">
+            <ContentPolicy/>
+          </Route>
+          <Route exact path="/privatePolicy">
+            <PrivatePolicy/>
+          </Route>
+          <Route exact path="/about">
+            <About/>
+          </Route>
+          <Route exact path="/search">
+            <Search/>
+          </Route>
+        </Switch>
     </div>
+  </Router>
   );
 }
 

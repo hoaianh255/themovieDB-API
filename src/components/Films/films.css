@@ -1,0 +1,19 @@
+.info p{
+    margin: 3px 5px;
+    padding: 2px 3px;
+    /*text-align: center;*/
+    border-radius: 6px;
+    background-color: rgba(0,0,0,0.7)
+}
+form#filterFilm .form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+form#filterFilm .form-group label{
+    font-size: 1.1rem;
+}
+form#filterFilm .form-group select{
+    width: 60%;
+}
